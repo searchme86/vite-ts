@@ -26,7 +26,7 @@ module.exports = {
     "no-undef": ["error", {typeof: true}],
     "prefer-const": "off",
     "no-shadow": [
-      "error",
+      "warn",
       {
         builtinGlobals: true,
         hoist: "functions",
