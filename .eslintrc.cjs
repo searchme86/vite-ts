@@ -1,4 +1,3 @@
-/* eslint-env node */
 module.exports = {
   env: {
     browser: true,
@@ -20,10 +19,43 @@ module.exports = {
   },
   plugins: ["@typescript-eslint", "prettier"],
   rules: {
-    quotes: ["error", "single"],
-    "no-duplicate-imports": "error",
-    "no-console": ["warn", {allow: ["warn", "error", "info"]}],
+    quotes: ["off", "single"],
+    "no-var": "error",
+    "block-scoped-var": "error",
     "no-unused-vars": "error",
+    "no-undef": ["error", {typeof: true}],
+    "prefer-const": [
+      "error",
+      {
+        destructuring: "any",
+        ignoreReadBeforeAssign: false,
+      },
+    ],
+    "no-shadow": [
+      "error",
+      {
+        builtinGlobals: true,
+        hoist: "functions",
+      },
+    ],
+    "no-use-before-define": [
+      "error",
+      {
+        functions: true,
+        classes: true,
+        variables: true,
+      },
+    ],
+    "no-undef-init": ["error", "always"],
+    "prefer-arrow-callback": [
+      "warn",
+      {
+        allowNamedFunctions: true,
+        allowUnboundThis: false,
+      },
+    ],
+    "no-duplicate-imports": "error",
+    "no-console": ["warn", {allow: ["warn", "error"]}],
     "no-multiple-empty-lines": "error",
   },
   settings: {
@@ -35,20 +67,20 @@ module.exports = {
     // },
     // 'import/parsers': { '@typescript-eslint/parser': '.ts' },
   },
-  rules: {
-    // 'import/order': [
-    //   'error',
-    //   {
-    //     groups: ['builtin', 'external', 'parent', 'sibling', 'index'],
-    //     alphabetize: {
-    //       order: 'asc',
-    //       caseInsensitive: true,
-    //     },
-    //     'newlines-between': 'never',
-    //   },
-    // ],
-    // 'import/no-unresolved': 'off',
-    // 'import/export': 'off',
-  },
+  // rules: {
+  //   // 'import/order': [
+  //   //   'error',
+  //   //   {
+  //   //     groups: ['builtin', 'external', 'parent', 'sibling', 'index'],
+  //   //     alphabetize: {
+  //   //       order: 'asc',
+  //   //       caseInsensitive: true,
+  //   //     },
+  //   //     'newlines-between': 'never',
+  //   //   },
+  //   // ],
+  //   // 'import/no-unresolved': 'off',
+  //   // 'import/export': 'off',
+  // },
   root: true,
 };
