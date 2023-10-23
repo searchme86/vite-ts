@@ -46,7 +46,7 @@ module.exports = {
         variables: true,
       },
     ],
-    "no-undef-init": ["error", "always"],
+    "no-undef-init": "error",
     "prefer-arrow-callback": [
       "warn",
       {
