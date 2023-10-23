@@ -19,7 +19,6 @@ module.exports = {
   },
   plugins: ["@typescript-eslint", "prettier"],
   rules: {
-    quotes: ["off", "single"],
     "no-var": "error",
     "block-scoped-var": "error",
     "no-unused-vars": "error",
@@ -57,6 +56,7 @@ module.exports = {
     "no-duplicate-imports": "error",
     "no-console": ["warn", {allow: ["warn", "error"]}],
     "no-multiple-empty-lines": "error",
+    "import/no-extraneous-dependencies": ["warn", {devDependencies: true}],
   },
   settings: {
     // 'import/resolver': {
