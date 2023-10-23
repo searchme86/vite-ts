@@ -7,8 +7,8 @@ module.exports = {
     "eslint:recommended",
     "airbnb",
     "plugin:@typescript-eslint/recommended",
-    // 'plugin:import/typescript',
-    // 'plugin:import/recommended',
+    "plugin:import/typescript",
+    "plugin:import/recommended",
     "plugin:prettier/recommended",
   ],
   overrides: [],
@@ -23,13 +23,7 @@ module.exports = {
     "block-scoped-var": "error",
     "no-unused-vars": "error",
     "no-undef": ["error", {typeof: true}],
-    "prefer-const": [
-      "error",
-      {
-        destructuring: "any",
-        ignoreReadBeforeAssign: false,
-      },
-    ],
+    "prefer-const": "off",
     "no-shadow": [
       "error",
       {
@@ -59,28 +53,12 @@ module.exports = {
     "import/no-extraneous-dependencies": ["warn", {devDependencies: true}],
   },
   settings: {
-    // 'import/resolver': {
-    //   node: {},
-    //   typescript: {
-    //     directory: './src',
-    //   },
-    // },
-    // 'import/parsers': { '@typescript-eslint/parser': '.ts' },
+    "import/parsers": {
+      "@typescript-eslint/parser": [".ts", ".css", ".json"],
+    },
+    "import/resolver": {
+      typescript: {},
+    },
   },
-  // rules: {
-  //   // 'import/order': [
-  //   //   'error',
-  //   //   {
-  //   //     groups: ['builtin', 'external', 'parent', 'sibling', 'index'],
-  //   //     alphabetize: {
-  //   //       order: 'asc',
-  //   //       caseInsensitive: true,
-  //   //     },
-  //   //     'newlines-between': 'never',
-  //   //   },
-  //   // ],
-  //   // 'import/no-unresolved': 'off',
-  //   // 'import/export': 'off',
-  // },
   root: true,
 };
