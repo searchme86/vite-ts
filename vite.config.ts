@@ -4,6 +4,9 @@ export default {
   plugins: [
     checker({
       typescript: true,
+      eslint: {
+        lintCommand: 'eslint "./src/**/*.ts"',
+      },
     }),
   ],
 };
