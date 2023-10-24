@@ -2,6 +2,8 @@ import {defineConfig} from "vite";
 import checker from "vite-plugin-checker";
 import terser from "@rollup/plugin-terser";
 import {resolve} from "path";
+import WindiCSS from "vite-plugin-windicss";
+import cssnano from "cssnano";
 
 export default defineConfig({
   resolve: {
@@ -31,5 +33,11 @@ export default defineConfig({
       keep_classnames: false,
       keep_fnames: false,
     }),
+    WindiCSS(),
   ],
+  css: {
+    postcss: {
+      plugins: [cssnano()],
+    },
+  },
 });
