@@ -50,7 +50,7 @@ const metaOptions = {
 };
 
 export default defineConfig({
-  base: process.env.NODE_ENV === "development" ? "/" : "./",
+  base: process.env.NODE_ENV === "production" ? "/vite-ts/" : "./",
   build: {
     rollupOptions: {
       input: {
@@ -107,4 +107,7 @@ export default defineConfig({
     createHtmlPlugin({minify: true}),
     htmlPlugin(metaOptions),
   ],
+  server: {
+    open: true,
+  },
 });
